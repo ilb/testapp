@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Схемы с описанием прикладных объектов.
+@version    $Id$
+-->
+<xsd:schema elementFormDefault="qualified" xmlns="urn:ru:ilb:meta:TestApp:Document" targetNamespace="urn:ru:ilb:meta:TestApp:Document" xmlns:lft="urn:ru:meta:TestApp:LeafTypes" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="urn:ru:meta:TestApp:LeafTypes" schemaLocation="./LeafTypes.xsd"/>
+    <xsd:complexType name="DocumentType">
+        <xsd:sequence>
+            <xsd:element name="objectId" type="lft:ObjectIdType" minOccurs="0"/>
+            <xsd:element name="createDate" type="xsd:dateTime" minOccurs="0"/>
+            <xsd:element name="createUid" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="modifyDate" type="xsd:dateTime" minOccurs="0"/>
+            <xsd:element name="modifyUid" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="deleteDate" type="xsd:dateTime" nillable="true" minOccurs="0"/>
+            <xsd:element name="deleteUid" type="xsd:string" nillable="true" minOccurs="0"/>
+            <xsd:element name="deleted" type="xsd:boolean" minOccurs="0" default="false"/>
+            <xsd:element name="containerId" type="lft:ObjectIdType" nillable="true" minOccurs="0"/>
+            <xsd:element name="containerType" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="chapterPath" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="displayName" type="xsd:string"/>
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="keywords" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="docDate" type="xsd:date" nillable="true" minOccurs="0"/>
+            <xsd:element name="keyId" type="lft:ObjectIdType" nillable="true" minOccurs="0"/>
+            <xsd:element name="nodeId" type="lft:ObjectIdType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="Document" type="DocumentType"/>
+</xsd:schema>
