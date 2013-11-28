@@ -120,7 +120,7 @@ function uncaughtFatalErrorExceptionHandler($exception) {
                             PHP_EOL . "REMOTE_ADDR=" . (isset($_SERVER["REMOTE_ADDR"]) ? $_SERVER["REMOTE_ADDR"] : ""), "Content-Type: text/plain; charset=UTF-8; format=flowed");
         }
     } elseif ($http) { //юзеровская ошибка (для cli выводим в strerr никуда не записывая)
-        if ($_SERVER["PHP_SELF"][1] == "~") {
+        if ($_SERVER["PHP_SELF"][1] == "~" || TRUE) { // для тестового приложения всегда выводим информацию об ошибке
             //в отладке дампы юзеровских ошибок тоже сохраним
             if (@file_put_contents(dirname(get_cfg_var("error_log")) . "/error" . $id, $logstr . $trace, FILE_APPEND) === FALSE) {
                 if ($logfile && is_writable($logfile)) {
@@ -236,7 +236,7 @@ function uncaughtFatalErrorExceptionHandler($exception) {
                 "<body>", PHP_EOL,
                 "<h2>", $reason, "</h2>", PHP_EOL,
                 "<hr/><pre>", PHP_EOL;
-                if ($_SERVER["PHP_SELF"][1] == "~") {
+                if ($_SERVER["PHP_SELF"][1] == "~" || TRUE) {  // для тестового приложения всегда выводим информацию об ошибке
                     echo htmlspecialchars($logstr), "<hr/>", $trace;
                 } else {
                     echo htmlspecialchars($message);
@@ -258,7 +258,7 @@ function uncaughtFatalErrorExceptionHandler($exception) {
                 echo PHP_EOL, str_repeat("X", 4096), PHP_EOL, "==========================================", PHP_EOL;
             }
             echo $message, PHP_EOL, "PHP application error: ", $code, " ", $id, PHP_EOL;
-            if ($_SERVER["PHP_SELF"][1] == "~") {
+            if ($_SERVER["PHP_SELF"][1] == "~" || TRUE) {  // для тестового приложения всегда выводим информацию об ошибке
                 echo $logstr, PHP_EOL;
                 //echo $trace,PHP_EOL; //трейсы мешают отлаживать ajax и пр. и все равно их там не видно
             }
