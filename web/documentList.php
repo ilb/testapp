@@ -20,7 +20,7 @@ $xw->startElementNS(NULL, "DocumentListResponse", "urn:ru:ilb:meta:TestApp:Docum
 $req->toXmlWriter($xw);
 // Если есть входные данные, проведем вычисления и выдадим ответ
 if (!$hreq->isEmpty()) {
-	$pdo=new PDO("mysql:host=127.12.246.130;dbname=testapp;charset=UTF-8","testapp","1qazxsw2",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$pdo=new PDO("mysql:host=127.12.155.130;dbname=testapp;charset=UTF-8","testapp","1qazxsw2",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	//prior to PHP 5.3.6, the charset option was ignored. If you're running an older version of PHP, you must do it like this:
 	$pdo->exec("set names utf8");
 	$query = "SELECT * FROM document WHERE docDate BETWEEN :dateStart AND :dateEnd";
