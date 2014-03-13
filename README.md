@@ -25,4 +25,4 @@ keywords), удален (да/нет) (поле deleted)
 http://tech.google-it.info/tgi/web/howto_xml_pdf.xhtml
 
 Установленное приложение в openshift
-https://php-techgoogleinfo.rhcloud.com/testapp/web/documentList.php
+http://php-bystrobank.rhcloud.com/testapp/web/documentList.php
