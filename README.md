@@ -22,7 +22,7 @@ keywords), удален (да/нет) (поле deleted)
 - модифицировать программу, добавив в форму поле "формат отчета" (html/pdf),
 при выборе pdf должен формироваться pdf-файл, содержащий таблицу документов
 аналогичного html-версии содержания. Пример формирования PDF из XML:
-http://php-bystrobank.rhcloud.com/tgi/web/howto_xml_pdf.xhtml
+https://github.com/bystrobank/eurofxref-daily
 
 Установленное приложение в openshift
 http://php-bystrobank.rhcloud.com/testapp/web/documentList.php
