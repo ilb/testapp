@@ -24,5 +24,5 @@ keywords), удален (да/нет) (поле deleted)
 аналогичного html-версии содержания. Пример формирования PDF из XML:
 https://github.com/bystrobank/eurofxref-daily
 
-Установленное приложение в openshift
-http://php-bystrobank.rhcloud.com/testapp/web/documentList.php
+Пример:
+http://p01.bystrobank.ru/testapp/web/documentList.php
