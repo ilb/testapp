@@ -10,7 +10,7 @@
  *
  *  @author dab@bystrobank.ru
  */
-function __autoload($c) {
+spl_autoload_register(function ($c) {
     $f = str_replace("_", DIRECTORY_SEPARATOR, $c) . ".php";
     //проверяем сами - чтоб отловить место где произошла ошибка (стандартное сообщение неинформатвно)
     $r = null;
