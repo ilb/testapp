@@ -36,5 +36,5 @@ spl_autoload_register(function ($c) {
         uncaughtFatalErrorExceptionHandler(
                 new FatalErrorException("Class '" . $c . "' not found in '" . $r . "'"));
     }
-}
+});
 
