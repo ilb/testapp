@@ -25,4 +25,4 @@ keywords), удален (да/нет) (поле deleted)
 https://github.com/bystrobank/eurofxref-daily
 
 Пример:
-http://p01.bystrobank.ru/testapp/web/documentList.php
+http://www.demo.ilb.ru/testapp/web/documentList.php
