@@ -10,7 +10,7 @@ testapp
 браузере) -> (xml запрос) ->....
 
 Ваше задание:
-- форкнуть https://github.com/bystrobank/testapp/ и выкачать локально
+- форкнуть [bystrobank/testapp](https://github.com/bystrobank/testapp/) и выкачать локально
 - установить тестовую базу (скрипты в tools/sql/) 
 - установить программу на web-сервер (для тестирования откройте в
 браузере testapp/web/documentList.php) - данный отчет представляет собой
@@ -23,7 +23,7 @@ keywords), удален (да/нет) (поле deleted)
 - модифицировать программу, добавив в форму поле "формат отчета" (html/pdf),
 при выборе pdf должен формироваться pdf-файл, содержащий таблицу документов
 аналогичного html-версии содержания. Пример формирования PDF из XML:
-https://github.com/bystrobank/eurofxref-daily
+[bystrobank/eurofxref-daily](https://github.com/bystrobank/eurofxref-daily)
 
 Пример:
-http://www.demo.ilb.ru/testapp/web/documentList.php
+Демо-приложение [http://www.demo.ilb.ru/testapp/web/documentList.php](http://www.demo.ilb.ru/testapp/web/documentList.php)
