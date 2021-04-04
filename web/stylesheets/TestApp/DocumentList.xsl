@@ -48,7 +48,27 @@
 						<input size="10" type="text" name="dateEnd-0" value="{$req/req:dateEnd}"/>
 					</label>
 				</div>
-				<div>
+				<div style="margin-top: 10px;">
+					<label title="Наименование">
+						Наименование
+						<input type="text" name="name-0" value="{$req/req:name}"/>
+					</label>
+				</div>
+				<div style="margin-top: 10px;">
+					<span>Формат вывода
+						<label style="margin-right: 5px;">
+							<input type="radio" name="outputFormat-0" value="html">
+								<xsl:attribute name="checked"/>
+							</input>
+							html
+						</label>
+						<label style="margin-right: 5px;">
+							<input type="radio" name="outputFormat-0" value="pdf"/>
+							pdf
+						</label>
+					</span>
+				</div>
+				<div style="margin-top: 10px;">
 					<button  type="submit">Отправить</button>
 				</div>
 			</fieldset>
@@ -59,10 +79,15 @@
 					Документы с
 					<xsl:value-of select="req:DocumentListRequest/req:dateStart"/> по
 					<xsl:value-of select="req:DocumentListRequest/req:dateEnd"/>
+					<xsl:if test="req:DocumentListRequest/req:name"><!--
+						-->, содержащие в названии "<xsl:value-of select="req:DocumentListRequest/req:name"/>"
+					</xsl:if>
 				</caption>
 				<tr>
 					<th>Дата</th>
 					<th>Наименование</th>
+					<th>Ключевые слова</th>
+					<th>Удален</th>
 				</tr>
 				<xsl:for-each select="obj:Document">
 					<tr>
@@ -73,6 +98,12 @@
 							<a href="document.php?objectId-0={obj:objectId}">
 								<xsl:value-of select="obj:displayName"/>
 							</a>
+						</td>
+						<td>
+							<xsl:value-of select="obj:keywords"/>
+						</td>
+						<td>
+							<xsl:value-of select="obj:deleted"/>
 						</td>
 					</tr>
 				</xsl:for-each>

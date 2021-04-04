@@ -58,7 +58,7 @@ class TestApp_Document extends Adaptor_XMLBase implements Adaptor_Array {
 	/**
 	 * Удален
 	 *
-	 * @var string
+	 * @var Basictypes_Boolean
 	 */
 	private $deleted;
 	/**
@@ -127,7 +127,7 @@ class TestApp_Document extends Adaptor_XMLBase implements Adaptor_Array {
 			if($this->modifyUid!==NULL) {$xw->writeElement("modifyUid",$this->modifyUid);}
 			if($this->deleteDate!==NULL) {$xw->writeElement("deleteDate",$this->deleteDate->LogicalToXSD());}
 			if($this->deleteUid!==NULL) {$xw->writeElement("deleteUid",$this->deleteUid);}
-			if($this->deleted!==NULL) {$xw->writeElement("deleted",$this->deleted);}
+			if($this->deleted!==NULL) {$xw->writeElement("deleted",$this->deleted->__toString());}
 			if($this->containerId!==NULL) {$xw->writeElement("containerId",$this->containerId);}
 			if($this->containerType!==NULL) {$xw->writeElement("containerType",$this->containerType);}
 			if($this->chapterPath!==NULL) {$xw->writeElement("chapterPath",$this->chapterPath);}
@@ -158,7 +158,7 @@ class TestApp_Document extends Adaptor_XMLBase implements Adaptor_Array {
 					case "modifyUid": $this->modifyUid=$xsinil?NULL:$xr->readString(); break;
 					case "deleteDate": $this->deleteDate=$xsinil?NULL:new Basictypes_DateTime($xr->readString(),Adaptor_DataType::XSD); break;
 					case "deleteUid": $this->deleteUid=$xsinil?NULL:$xr->readString(); break;
-					case "deleted": $this->deleted=$xsinil?NULL:$xr->readString(); break;
+					case "deleted": $this->deleted=$xsinil?NULL:new Basictypes_Boolean($xr->readString()); break;
 					case "containerId": $this->containerId=$xsinil?NULL:$xr->readString(); break;
 					case "containerType": $this->containerType=$xsinil?NULL:$xr->readString(); break;
 					case "chapterPath": $this->chapterPath=$xsinil?NULL:$xr->readString(); break;
@@ -186,7 +186,7 @@ class TestApp_Document extends Adaptor_XMLBase implements Adaptor_Array {
 		if(isset($row["modifyUid"])) $this->modifyUid=$row["modifyUid"];
 		if(isset($row["deleteDate"])) $this->deleteDate=new Basictypes_DateTime($row["deleteDate"],$mode);
 		if(isset($row["deleteUid"])) $this->deleteUid=$row["deleteUid"];
-		if(isset($row["deleted"])) $this->deleted=$row["deleted"];
+		if(isset($row["deleted"])) $this->deleted=new Basictypes_Boolean($row["deleted"]);
 		if(isset($row["containerId"])) $this->containerId=$row["containerId"];
 		if(isset($row["containerType"])) $this->containerType=$row["containerType"];
 		if(isset($row["chapterPath"])) $this->chapterPath=$row["chapterPath"];
