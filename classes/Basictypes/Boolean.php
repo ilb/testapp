@@ -27,7 +27,7 @@ class Basictypes_Boolean implements Adaptor_DataType{
 		return $this->value;
 	}
 	public function __toString(){
-		return $this->value?"true":"false";
+		return $this->value?"Да":"Нет";
 	}
 	public function LogicalToXSD(){
 		return $this->value?"true":"false";
