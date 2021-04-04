@@ -74,7 +74,13 @@ class TestApp_DocumentListRequest extends Adaptor_XMLBase {
 				switch($xr->localName){
 					case "dateStart": $this->dateStart=$xsinil?NULL:new Basictypes_Date($xr->readString(),Adaptor_DataType::XSD); break;
 					case "dateEnd": $this->dateEnd=$xsinil?NULL:new Basictypes_Date($xr->readString(),Adaptor_DataType::XSD); break;
-					case "name": $this->name=$xsinil?NULL:$xr->readString();break;
+					case "name": 
+						if ($xsinil) $this->name = NULL;
+						else {
+							$name = $xr->readString();
+							$this->name = empty($name) ? NULL : $name;
+						}
+						break;
 					case "outputFormat": $this->outputFormat=$xsinil?NULL:$xr->readString(); break;
 				}
 			}elseif($xr->nodeType==XMLReader::END_ELEMENT&&$root==$xr->localName){
